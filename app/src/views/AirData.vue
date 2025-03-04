@@ -10,9 +10,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const airData = ref('')
 async function getData() {
-  let response = await fetch(
-    `https://data.cityofnewyork.us/resource/dsyc-npkh.json/${route.params.id}`,
-  )
+  let response = await fetch(`https://data.cityofnewyork.us/resource/dsyc-npkh.json`)
   let data = await response.json()
   airData.value = data
 }
