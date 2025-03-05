@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h2>{{ air.data_value }}</h2>
+    <h2>{{ air.status }}</h2>
     <h3>{{ id + 1 }}</h3>
   </div>
 </template>

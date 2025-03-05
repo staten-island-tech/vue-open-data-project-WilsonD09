@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ pokemon.name }}</h2>
+    <h2>{{ air.name }}</h2>
   </div>
 </template>
 
