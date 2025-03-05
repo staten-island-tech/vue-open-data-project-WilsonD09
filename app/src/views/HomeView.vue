@@ -6,7 +6,7 @@
 import { ref, onMounted } from 'vue'
 const airData = ref('')
 async function getData() {
-  let response = await fetch('https://data.cityofnewyork.us/resource/dsyc-npkh.json')
+  let response = await fetch('https://data.cityofnewyork.us/resource/c3uy-2p5r.json')
   let data = await response.json()
   airData.value = data.results
 }
