@@ -1,20 +1,16 @@
 <template>
-  <router-link :to="airPath" class="card">
-    <h2>{{ air.name }}</h2>
-    <h3>{{ id }}</h3>
-  </router-link>
+  <div class="card">
+    <h2>{{ air.data_value }}</h2>
+    <h3>{{ id + 1 }}</h3>
+  </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
 
 const props = defineProps({
-  pokemon: Object,
+  air: Object,
   id: Number,
-})
-
-const airPath = computed(() => {
-  return `/air/${props.id}`
 })
 </script>
 
