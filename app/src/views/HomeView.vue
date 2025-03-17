@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container flex flex-wrap justify-around m-auto">
     <h1>Tree</h1>
     <fifteenTrees
       v-for="(tree, index) in fifteenData"
