@@ -1,13 +1,18 @@
 <template>
-  <div class="container flex flex-wrap justify-around m-auto">
+  <div class="mx-[5rem]">
     <h1>Tree</h1>
-    <fifteenTrees
-      v-for="(tree, index) in fifteenData"
-      :key="tree.status"
-      :tree="tree"
-      :id="index"
-    />
-    <fiveTrees v-for="(tree, index) in fiveData" :key="tree.status" :tree="tree" :id="index" />
+    <div class="flex flex-wrap justify-between">
+      <fiveTrees v-for="(tree, index) in fiveData" :key="tree.status" :tree="tree" :id="index" />
+    </div>
+
+    <div class="flex flex-wrap justify-between">
+      <fifteenTrees
+        v-for="(tree, index) in fifteenData"
+        :key="tree.status"
+        :tree="tree"
+        :id="index"
+      />
+    </div>
   </div>
 </template>
 
