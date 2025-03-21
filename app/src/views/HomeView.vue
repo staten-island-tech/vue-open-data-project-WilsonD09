@@ -13,6 +13,13 @@ async function getData5() {
   let response = await fetch('https://data.cityofnewyork.us/resource/29bw-z7pj.json?$limit=1000')
   let data = await response.json()
   fiveData.value = data
+  //return data
+}
+async function filterdata() {
+  const data = await getData5()
+  console.log(data)
+  fiveData.value = data.filter((item) => item.status === 'Poor')
+  console.log(fiveData.value)
 }
 onMounted(() => {
   getData5()
