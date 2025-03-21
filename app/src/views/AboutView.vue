@@ -18,16 +18,6 @@ async function getData15() {
   let data = await response.json()
   fifteenData.value = data
 }
-const speciesCount = computed(() => {
-  const count = {}
-  fifteenData.value.forEach((tree) => {
-    const species = tree.spc_common
-    if (species) {
-      count[species] = (count[species] || 0) + 1
-    }
-  })
-  console.log(count)
-})
 onMounted(() => {
   getData15()
 })

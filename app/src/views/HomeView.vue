@@ -7,6 +7,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import fiveTrees from '@/components/fiveData.vue'
+import { fiveSpecies } from '@/components/fiveSpecies'
 const fiveData = ref('')
 async function getData5() {
   let response = await fetch('https://data.cityofnewyork.us/resource/29bw-z7pj.json?$limit=1000')
@@ -16,6 +17,7 @@ async function getData5() {
 onMounted(() => {
   getData5()
 })
+console.log(fiveSpecies)
 </script>
 
 <style scoped></style>
