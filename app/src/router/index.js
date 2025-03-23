@@ -26,12 +26,12 @@ const router = createRouter({
       component: () => import('../views/BarView.vue'),
     },
     {
-      path: '/line',
-      name: 'line',
+      path: '/pie',
+      name: 'pie',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/LineView.vue'),
+      component: () => import('../views/PieView.vue'),
     },
   ],
 })
