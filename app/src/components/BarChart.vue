@@ -20,9 +20,7 @@ import {
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const props = defineProps({
-  data: {
-    type: Object,
-  },
+  data: Object,
 })
 const chartOptions = reactive({
   responsive: true,
