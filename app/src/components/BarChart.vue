@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Bar :data="props.data" :options="chartOptions" />
+    <Bar :data="props.data" :options="props.options" />
   </div>
 </template>
 
 <script setup>
-import { reactive, defineProps } from 'vue'
+import { reactive } from 'vue'
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -21,14 +21,7 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const props = defineProps({
   data: Object,
-})
-const chartOptions = reactive({
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-  },
+  options: Object,
 })
 </script>
 
