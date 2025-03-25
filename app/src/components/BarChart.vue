@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Bar :data="props.data" :options="props.options" />
+    <Bar :data="props.data" :options="chartOptions" />
   </div>
 </template>
 
@@ -21,7 +21,20 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const props = defineProps({
   data: Object,
-  options: Object,
+})
+const chartOptions = reactive({
+  scales: {
+    y: {
+      min: -1000,
+      max: 1000,
+    },
+  },
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+  },
 })
 </script>
 

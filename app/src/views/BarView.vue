@@ -1,5 +1,5 @@
 <template>
-  <BarChart :data="chartData" :options="chartOptions" :key="chartKey" />
+  <BarChart :data="chartData" :key="chartKey" />
 </template>
 
 <script setup>
@@ -66,20 +66,6 @@ const chartData = reactive({
       backgroundColor: 'rgba(255, 99, 132, 0.6)',
     },
   ],
-})
-const chartOptions = reactive({
-  scales: {
-    y: {
-      min: -1000,
-      max: 1000,
-    },
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-  },
 })
 const chartKey = computed(() => JSON.stringify(chartData))
 </script>

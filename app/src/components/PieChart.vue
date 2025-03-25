@@ -5,7 +5,9 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
-const props = defineProps(['data'])
+const props = defineProps({
+  data: Object,
+})
 
 const chartOptions = reactive({
   responsive: true,
