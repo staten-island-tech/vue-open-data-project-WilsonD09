@@ -5,54 +5,23 @@
 </template>
 
 <script setup>
-const species = [
-  'PEAR, CALLERY',
-  'LONDON PLANETREE',
-  'MAPLE, NORWAY-CR KNG',
-  'HAWTHORN, OTHER',
-  'MAPLE, NORWAY',
-  'HONEYLOCUST',
-  'LINDEN, LITTLE LEAF',
-  'UNKNOWN',
-  'GINKGO',
-  'GOLDENRAIN TREE',
-  'DOGWOOD, FLOWERING',
-  'MAPLE, SYCAMORE',
-  'MAPLE, RED',
-  'PLUM, PURPLELEAF',
-  'ZELKOVA, JAPANESE',
-  'OAK, PIN',
-  'ASH, GREEN',
-  'JAPANESE TREE LILAC',
-  'CHERRY, OTHER',
-  'MAPLE, AMUR',
-  'JAPANESE PAGODA TREE',
-  'KATSURA TREE',
-  'OAK, NORTHERN RED',
-  'Unknown Dead',
-  'ELM, AMERICAN',
-  'ELM, CHINESE',
-  'LINDEN, SILVER',
-  'OAK, WHITE',
-  'LINDEN, AMERICAN',
-  'OAK, SWAMP WHITE',
-  'TREE OF HEAVEN',
-  'DAWN REDWOOD',
-  'OAK, SAWTOOTH',
-  'BLACK LOCUST',
-  'OAK, WILLOW',
-  'HORNBEAM, AMERICAN',
-  'REDBUD, EASTERN',
-  'KENTUCKY COFFEETREE',
-  'CHOKECHERRY, SHUBERT',
-  'MAPLE, SILVER',
-  'HACKBERRY',
-  'BALDCYPRESS',
-  'HORNBEAM, EUROPEAN',
-  'POPLAR, OTHER',
-  'MAPLE, HEDGE',
-  'MULBERRY',
-]
+import { ref, onMounted } from 'vue'
+const fiveData = ref('')
+const fifteenData = ref('')
+async function getData5() {
+  let response = await fetch('https://data.cityofnewyork.us/resource/29bw-z7pj.json?$limit=1000')
+  let data = await response.json()
+  return data
+}
+async function getData15() {
+  let response = await fetch('https://data.cityofnewyork.us/resource/uvpi-gqnh.json/?$limit=1000')
+  let data = await response.json()
+  return data
+}
+onMounted(() => {
+  getData5()
+  getData15()
+})
 </script>
 
 <style scoped></style>

@@ -15,15 +15,10 @@
 </template>
 
 <script setup>
-import { fiveSpecies } from '@/components/fiveSpecies'
 const props = defineProps({
   tree: Object,
   id: Number,
 })
-
-if (!fiveSpecies.includes(props.tree.spc_common)) {
-  fiveSpecies.push(props.tree.spc_common)
-}
 </script>
 
 <style scoped></style>
